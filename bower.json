@@ -1,5 +1,5 @@
 {
-  "name": "angularSkeleton",
+  "name": "angular-skeleton",
   "version": "0.0.0",
   "dependencies": {
     "angular": "~1.0.7",
