@@ -278,6 +278,10 @@ module.exports = function (grunt) {
       unit: {
         configFile: 'karma.conf.js',
         singleRun: true
+      },
+      watch: {
+        configFile: 'karma.conf.js',
+        autoWatch: true
       }
     },
     cdnify: {
@@ -327,7 +331,16 @@ module.exports = function (grunt) {
     'concurrent:test',
     'autoprefixer',
     'connect:test',
-    'karma'
+    'karma:unit'
+  ]);
+
+  grunt.registerTask('testing', [
+    'clean:server',
+    'less:dev',
+    'concurrent:test',
+    'autoprefixer',
+    'connect:test:keepalive',
+    'karma:watch'
   ]);
 
   grunt.registerTask('build', [
